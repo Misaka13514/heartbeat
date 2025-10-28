@@ -2,19 +2,25 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "Misaka13514's Status Page",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/lyc8503', label: 'GitHub' },
-    { link: 'https://blog.lyc8503.net/', label: 'Blog' },
-    { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
+    { link: 'https://github.com/Misaka13514/heartbeat', label: 'GitHub' },
   ],
   // [OPTIONAL] Group your monitors
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    '🌐 Public (example group name)': ['foo_monitor', 'bar_monitor', 'more monitor ids...'],
-    '🔐 Private': ['test_tcp_monitor'],
+    '🍂 Proj. One Among Us': [
+      'oau_memo_frontend',
+      'oau_memo_data',
+      'oau_memo_backend',
+      'oau_about',
+      'oau_neorle',
+      'oau_liveweb',
+      'oau_tia',
+      'oau_tia_uniguide',
+    ],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
@@ -33,94 +39,79 @@ const workerConfig: WorkerConfig = {
   // passwordProtection: 'username:password',
   // Define all your monitors here
   monitors: [
-    // Example HTTP Monitor
     {
-      // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
-      // `name` is used at status page and callback message
-      name: 'My API Monitor',
-      // `method` should be a valid HTTP Method
-      method: 'POST',
-      // `target` is a valid URL
-      target: 'https://example.com',
-      // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
-      // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
-      // [OPTIONAL] `hideLatencyChart` will hide status page latency chart if set to true
-      hideLatencyChart: false,
-      // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
-      // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
-      timeout: 10000,
-      // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
-      // [OPTIONAL] body to be sent
-      body: 'Hello, world!',
-      // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
-      responseKeyword: 'success',
-      // [OPTIONAL] if specified, the response must NOT contains the keyword to be considered as operational.
-      responseForbiddenKeyword: 'bad gateway',
-      // [OPTIONAL] if specified, will call the check proxy to check the monitor, mainly for geo-specific checks
-      // refer to docs https://github.com/lyc8503/UptimeFlare/wiki/Check-proxy-setup before setting this value
-      // currently supports `worker://` and `http(s)://` proxies
-      checkProxy: 'https://xxx.example.com OR worker://weur',
-      // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
-      checkProxyFallback: true,
+      id: 'oau_memo_frontend',
+      name: 'OAU: memorial website - Frontend',
+      method: 'GET',
+      target: 'https://one-among.us/?uwu=true',
+      tooltip: 'GitHub Pages + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/web',
+      responseKeyword: '那些秋叶',
     },
-    // Example TCP Monitor
     {
-      id: 'test_tcp_monitor',
-      name: 'Example TCP Monitor',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'TCP_PING',
-      // `target` should be `host:port` for tcp monitors
-      target: '1.2.3.4:22',
-      tooltip: 'My production server SSH',
-      statusPageLink: 'https://example.com',
-      timeout: 5000,
+      id: 'oau_memo_data',
+      name: 'OAU: memorial website - Data',
+      method: 'GET',
+      target: 'https://data.one-among.us/eggs.json',
+      tooltip: 'GitHub Pages + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/data',
+      responseKeyword: '舞萌',
+    },
+    {
+      id: 'oau_memo_backend',
+      name: 'OAU: memorial website - Backend',
+      method: 'GET',
+      target: 'https://backend.one-among.us/flowers/get?id=Misaka13514',
+      tooltip: 'Vultr (Seattle) + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/backend',
+      responseKeyword: '0',
+    },
+    {
+      id: 'oau_about',
+      name: 'OAU: about website',
+      method: 'GET',
+      target: 'https://oneamongus.ca',
+      tooltip: 'GitHub Pages + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/about-site',
+      responseKeyword: 'One Among Us Transgender Support',
+    },
+    {
+      id: 'oau_neorle',
+      name: 'OAU: neo-RLEwiki',
+      method: 'GET',
+      target: 'https://rle.oau.app',
+      tooltip: 'GitHub Pages + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/neo-RLEwiki',
+      responseKeyword: 'neo-RLEwiki',
+    },
+    {
+      id: 'oau_liveweb',
+      name: 'OAU: live redirector',
+      method: 'GET',
+      target: 'https://live.oau.app',
+      tooltip: 'Contabo (Nuremberg) + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/appservers/blob/main/apps/live-website/index.html',
+      responseKeyword: '直播已经结束，点击下列链接查看回放',
+    },
+    {
+      id: 'oau_tia',
+      name: 'OAU: Tia redirector',
+      method: 'GET',
+      target: 'https://oau.edu.kg',
+      tooltip: 'Contabo (Nuremberg) + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/appservers/blob/main/apps/tia-legacy/index.html',
+      responseKeyword: 'Redirecting to One Among Us homepage',
+    },
+    {
+      id: 'oau_tia_uniguide',
+      name: 'OAU: UniGuide',
+      method: 'GET',
+      target: 'https://uniguide.oau.edu.kg',
+      tooltip: 'GitHub Pages + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/TransAcademicUniGuide',
+      responseKeyword: 'Transgender University Guidance',
     },
   ],
-  // [Optional] Notification settings
-  notification: {
-    // [Optional] Notification webhook settings, if not specified, no notification will be sent
-    // More info at Wiki: https://github.com/lyc8503/UptimeFlare/wiki/Setup-notification
-    webhook: {
-      // [Required] webhook URL (example: Telegram Bot API)
-      url: 'https://api.telegram.org/bot123456:ABCDEF/sendMessage',
-      // [Optional] HTTP method, default to 'GET' for payloadType=param, 'POST' otherwise
-      method: 'POST',
-      // [Optional] headers to be sent
-      headers: {
-        foo: 'bar',
-      },
-      // [Required] Specify how to encode the payload
-      // Should be one of 'param', 'json' or 'x-www-form-urlencoded'
-      // 'param': append url-encoded payload to URL search parameters
-      // 'json': POST json payload as body, set content-type header to 'application/json'
-      // 'x-www-form-urlencoded': POST url-encoded payload as body, set content-type header to 'x-www-form-urlencoded'
-      payloadType: 'x-www-form-urlencoded',
-      // [Required] payload to be sent
-      // $MSG will be replaced with the human-readable notification message
-      payload: {
-        chat_id: 12345678,
-        text: '$MSG',
-      },
-      // [Optional] timeout calling this webhook, in millisecond, default to 5000
-      timeout: 10000,
-    },
-    // [Optional] timezone used in notification messages, default to "Etc/GMT"
-    timeZone: 'Asia/Shanghai',
-    // [Optional] grace period in minutes before sending a notification
-    // notification will be sent only if the monitor is down for N continuous checks after the initial failure
-    // if not specified, notification will be sent immediately
-    gracePeriod: 5,
-    // [Optional] disable notification for monitors with specified ids
-    skipNotificationIds: ['foo_monitor', 'bar_monitor'],
-  },
   callbacks: {
     onStatusChange: async (
       env: any,
@@ -153,48 +144,7 @@ const workerConfig: WorkerConfig = {
 // Also, related downtime notifications will be skipped (if any)
 // Of course, you can leave it empty if you don't need this feature
 // const maintenances: MaintenanceConfig[] = []
-const maintenances: MaintenanceConfig[] = [
-  {
-    // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['foo_monitor', 'bar_monitor'],
-    // [Optional] default to "Scheduled Maintenance" if not specified
-    title: 'Test Maintenance',
-    // Description of the maintenance, will be shown at status page
-    body: 'This is a test maintenance, server software upgrade',
-    // Start time of the maintenance, in UNIX timestamp or ISO 8601 format
-    start: '2025-04-27T00:00:00+08:00',
-    // [Optional] end time of the maintenance, in UNIX timestamp or ISO 8601 format
-    // if not specified, the maintenance will be considered as on-going
-    end: '2025-04-30T00:00:00+08:00',
-    // [Optional] color of the maintenance alert at status page, default to "yellow"
-    color: 'blue',
-  },
-  // As this config file is a TypeScript file, you can even use IIFE to generate scheduled maintenances
-  // The following example shows a scheduled maintenance from 2 AM to 4 AM on the 15th of every month (UTC+8)
-  // This COULD BE DANGEROUS, as generating too many maintenance entries can lead to performance problems
-  // Undeterministic outputs may also lead to bugs or unexpected behavior
-  // If you don't know how to DEBUG, use this approach WITH CAUTION
-  ...(function () {
-    const schedules = []
-    const today = new Date()
-
-    for (let i = -1; i <= 1; i++) {
-      // JavaScript's Date object will automatically handle year rollovers
-      const date = new Date(today.getFullYear(), today.getMonth() + i, 15)
-      const year = date.getFullYear()
-      const month = String(date.getMonth() + 1).padStart(2, '0')
-
-      schedules.push({
-        title: `${year}/${parseInt(month)} - Test scheduled maintenance`,
-        monitors: ['foo_monitor'],
-        body: 'Monthly scheduled maintenance',
-        start: `${year}-${month}-15T02:00:00.000+08:00`,
-        end: `${year}-${month}-15T04:00:00.000+08:00`,
-      })
-    }
-    return schedules
-  })(),
-]
+const maintenances: MaintenanceConfig[] = []
 
 // Don't forget this, otherwise compilation fails.
 export { maintenances, pageConfig, workerConfig }
