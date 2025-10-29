@@ -11,12 +11,18 @@ const pageConfig: PageConfig = {
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
+    '🐧 Apeiria Arch Linux Repository': [
+      'apeiria_aur_index',
+      'apeiria_aur_build',
+    ],
     '🍂 Proj. One Among Us': [
       'oau_memo_frontend',
       'oau_memo_data',
       'oau_memo_backend',
       'oau_about',
       'oau_neorle',
+      'oau_falling_frontend',
+      'oau_falling_data',
       'oau_liveweb',
       'oau_tia',
       'oau_tia_uniguide',
@@ -39,6 +45,24 @@ const workerConfig: WorkerConfig = {
   // passwordProtection: 'username:password',
   // Define all your monitors here
   monitors: [
+    {
+      id: 'apeiria_aur_index',
+      name: 'apeiria: Index',
+      method: 'GET',
+      target: 'https://aur.apeiria.net',
+      tooltip: 'Cloudflare Workers + OneDrive',
+      statusPageLink: 'https://github.com/Misaka13514-AUR/ODIndex',
+      responseKeyword: 'Apeiria Arch Linux Repository',
+    },
+    {
+      id: 'apeiria_aur_build',
+      name: 'apeiria: Build Logs',
+      method: 'GET',
+      target: 'https://build.apeiria.net',
+      tooltip: 'Cloudflare Workers + Supabase',
+      statusPageLink: 'https://github.com/Misaka13514-AUR/build-logs',
+      responseKeyword: 'Packages',
+    },
     {
       id: 'oau_memo_frontend',
       name: 'OAU: memorial website - Frontend',
@@ -83,6 +107,24 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/neo-RLEwiki',
       responseKeyword: 'neo-RLEwiki',
+    },
+    {
+      id: 'oau_falling_frontend',
+      name: 'OAU: Falling Like - Frontend',
+      method: 'GET',
+      target: 'https://f.oneamongus.ca',
+      tooltip: 'GitHub Pages + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/falling-like',
+      responseKeyword: 'What If You Are Falling',
+    },
+    {
+      id: 'oau_falling_data',
+      name: 'OAU: Falling Like - Data',
+      method: 'GET',
+      target: 'https://eu2.contabostorage.com/176b8434127b4d90bfb1360e128e586c:oneamongus/falling-data/questions.json',
+      tooltip: 'Contabo S3 (European Union)',
+      statusPageLink: 'https://github.com/one-among-us/falling-like/blob/master/src/logic/config.ts',
+      responseKeyword: 'Play_With_Cats',
     },
     {
       id: 'oau_liveweb',
