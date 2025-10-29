@@ -53,6 +53,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Cloudflare Workers + OneDrive',
       statusPageLink: 'https://github.com/Misaka13514-AUR/ODIndex',
       responseKeyword: 'Apeiria Arch Linux Repository',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'apeiria_aur_build',
@@ -62,6 +63,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Cloudflare Workers + Supabase',
       statusPageLink: 'https://github.com/Misaka13514-AUR/build-logs',
       responseKeyword: 'Packages',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_memo_frontend',
@@ -71,6 +73,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/web',
       responseKeyword: '那些秋叶',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_memo_data',
@@ -80,6 +83,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/data',
       responseKeyword: '舞萌',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_memo_backend',
@@ -89,6 +93,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Vultr (Seattle) + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/backend',
       responseKeyword: '0',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_about',
@@ -98,6 +103,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/about-site',
       responseKeyword: 'One Among Us Transgender Support',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_neorle',
@@ -107,6 +113,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/neo-RLEwiki',
       responseKeyword: 'neo-RLEwiki',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_falling_frontend',
@@ -116,6 +123,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/falling-like',
       responseKeyword: 'What If You Are Falling',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_falling_data',
@@ -125,6 +133,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Contabo S3 (European Union)',
       statusPageLink: 'https://github.com/one-among-us/falling-like/blob/master/src/logic/config.ts',
       responseKeyword: 'Play_With_Cats',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_liveweb',
@@ -134,6 +143,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Contabo (Nuremberg) + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/appservers/blob/main/apps/live-website/index.html',
       responseKeyword: '直播已经结束，点击下列链接查看回放',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_tia',
@@ -143,6 +153,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Contabo (Nuremberg) + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/appservers/blob/main/apps/tia-legacy/index.html',
       responseKeyword: 'Redirecting to One Among Us homepage',
+      checkProxy: 'worker://apac',
     },
     {
       id: 'oau_tia_uniguide',
@@ -152,6 +163,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'GitHub Pages + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/TransAcademicUniGuide',
       responseKeyword: 'Transgender University Guidance',
+      checkProxy: 'worker://apac',
     },
   ],
   callbacks: {
