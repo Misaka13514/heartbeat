@@ -25,6 +25,7 @@ const pageConfig: PageConfig = {
       'oau_falling_data',
       'oau_matrix',
       'oau_headscale',
+      'oau_headscale_backend',
       'oau_liveweb',
       'oau_tia',
       'oau_tia_uniguide',
