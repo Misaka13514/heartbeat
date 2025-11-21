@@ -173,6 +173,17 @@ const workerConfig: WorkerConfig = {
       checkProxyFallback: true,
     },
     {
+      id: 'oau_headscale_backend',
+      name: 'OAU: Headscale console',
+      method: 'GET',
+      target: 'https://hs.oau.app/api/v1/user',
+      tooltip: 'Contabo (Nuremberg) + Cloudflare CDN',
+      statusPageLink: 'https://github.com/one-among-us/appservers/blob/main/apps/headscale.nix',
+      expectedCodes: [401],
+      checkProxy: 'worker://apac',
+      checkProxyFallback: true,
+    },
+    {
       id: 'oau_liveweb',
       name: 'OAU: live redirector',
       method: 'GET',
