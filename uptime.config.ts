@@ -169,7 +169,7 @@ const workerConfig: WorkerConfig = {
       target: 'https://hs.oau.app/windows',
       tooltip: 'Contabo (Nuremberg) + Cloudflare CDN',
       statusPageLink: 'https://github.com/one-among-us/appservers/blob/main/apps/headscale.nix',
-      responseKeyword: 'headscale: Windows configuration',
+      responseKeyword: 'Windows configuration',
       checkProxy: 'worker://apac',
       checkProxyFallback: true,
     },
